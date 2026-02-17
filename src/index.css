@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-color: #0071e3;
+  --secondary-color: #147ce5;
+  --accent-color: #bf5af2;
+  --bg-color: #000000;
+  --bg-secondary: #1d1d1f;
+  --bg-tertiary: #0d0d0d;
+  --text-color: #f5f5f7;
+  --text-secondary: #86868b;
+  --text-tertiary: #6e6e73;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.04);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Elegant Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 113, 227, 0.3);
+  color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
