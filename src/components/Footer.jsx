@@ -14,7 +14,7 @@ const Footer = () => {
         
         <div className="footer-social">
           <motion.a
-            href="https://github.com"
+            href="https://github.com/Gera10CC"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ color: '#f5f5f7' }}
@@ -22,7 +22,7 @@ const Footer = () => {
             GitHub
           </motion.a>
           <motion.a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/gerald-calderón-castillo-037142367"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ color: '#f5f5f7' }}
@@ -30,7 +30,7 @@ const Footer = () => {
             LinkedIn
           </motion.a>
           <motion.a
-            href="mailto:gerald@example.com"
+            href="mailto:geraldcalderoncastillo@gmail.com"
             whileHover={{ color: '#f5f5f7' }}
           >
             Email
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
 
         <p className="footer-credit">
-          Diseñado y desarrollado por <span>Gerald</span>
+          Diseñado y desarrollado por <span>Gerald Calderón Castillo</span>
         </p>
         <p className="footer-year">© {new Date().getFullYear()}</p>
       </div>

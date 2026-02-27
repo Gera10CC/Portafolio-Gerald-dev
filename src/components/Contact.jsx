@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -70,31 +71,31 @@ const Contact = () => {
 
             <div className="contact-methods">
               <motion.a
-                href="mailto:gerald@example.com"
+                href="mailto:geraldcalderoncastillo@gmail.com"
                 className="contact-method"
                 whileHover={{ x: 5 }}
               >
-                <span className="contact-icon">📧</span>
-                <span>gerald@example.com</span>
+                <Mail className="contact-icon" size={20} />
+                <span>geraldcalderoncastillo@gmail.com</span>
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/gerald-calderón-castillo-037142367"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-method"
                 whileHover={{ x: 5 }}
               >
-                <span className="contact-icon">💼</span>
+                <Linkedin className="contact-icon" size={20} />
                 <span>LinkedIn</span>
               </motion.a>
               <motion.a
-                href="https://github.com"
+                href="https://github.com/Gera10CC"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-method"
                 whileHover={{ x: 5 }}
               >
-                <span className="contact-icon">📦</span>
+                <Github className="contact-icon" size={20} />
                 <span>GitHub</span>
               </motion.a>
             </div>

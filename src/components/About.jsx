@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import './About.css';
+import profileImage from '../assets/dev.jpg';
 
 const About = () => {
   const ref = useRef(null);
@@ -42,25 +43,19 @@ const About = () => {
         <div className="about-content">
           <motion.div className="about-text" variants={itemVariants}>
             <p>
-              Soy un desarrollador web con pasión por crear experiencias digitales 
-              que combinan diseño elegante con funcionalidad impecable. Creo firmemente 
-              que los mejores productos nacen de la intersección entre estética y usabilidad.
+              Soy Ingeniero en Sistemas de Información y desarrollador web, enfocado en crear soluciones digitales sólidas, escalables y orientadas a resultados. Me apasiona construir sistemas que combinen una experiencia de usuario clara con una arquitectura técnica bien estructurada.
             </p>
             <p>
-              Me especializo en desarrollo frontend, construyendo interfaces 
-              intuitivas y responsivas. Siempre busco aprender y explorar 
-              nuevas tecnologías para mejorar continuamente mi trabajo.
+              Me especializo en desarrollo backend con Laravel y Blade, creando aplicaciones web robustas y escalables. También trabajo en desarrollo frontend con React, diseño de interfaces, bases de datos, arquitectura de aplicaciones y despliegue. Disfruto entender el sistema completo, desde la interacción del usuario hasta la lógica y la infraestructura que lo sostiene.
             </p>
             <p>
-              Cuando no estoy programando, disfruto explorar nuevas herramientas, 
-              contribuir a proyectos open source y perfeccionar cada detalle 
-              de mis diseños.
+              Más allá del código, me interesa la eficiencia, la automatización y la sostenibilidad de los proyectos. Siempre busco optimizar procesos, evaluar herramientas con criterio técnico y construir productos que aporten valor real a largo plazo.
             </p>
 
             <motion.div className="tech-list" variants={itemVariants}>
               <p>Tecnologías principales:</p>
               <ul>
-                {['JavaScript (ES6+)', 'React', 'TypeScript', 'Node.js', 'CSS/SASS', 'Git'].map((tech, index) => (
+                {['Laravel', 'Blade', 'PHP', 'React', 'JavaScript (ES6+)', 'MySQL'].map((tech, index) => (
                   <motion.li
                     key={tech}
                     initial={{ opacity: 0, x: -10 }}
@@ -76,9 +71,7 @@ const About = () => {
 
           <motion.div className="about-image" variants={itemVariants}>
             <div className="image-wrapper">
-              <div className="image-placeholder">
-                <span className="placeholder-icon">👨‍💻</span>
-              </div>
+              <img src={profileImage} alt="Gerald - Desarrollador Web" className="profile-image" />
             </div>
           </motion.div>
         </div>
@@ -86,7 +79,7 @@ const About = () => {
         <motion.div className="stats-container" variants={containerVariants}>
           {[
             { number: '2+', label: 'Años de Experiencia' },
-            { number: '15+', label: 'Proyectos Completados' },
+            { number: '10+', label: 'Proyectos Completados' },
             { number: '10+', label: 'Tecnologías' },
             { number: '100%', label: 'Compromiso' },
           ].map((stat) => (

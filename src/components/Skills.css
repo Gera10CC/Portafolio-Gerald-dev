@@ -69,15 +69,26 @@
 }
 
 .skill-bar {
-  height: 4px;
-  background: var(--border-color);
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
 }
 
 .skill-progress {
   height: 100%;
   border-radius: 10px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover .skill-progress {
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.8);
+  transform: scaleY(1.2);
+}
   position: relative;
   background: var(--text-color) !important;
 }

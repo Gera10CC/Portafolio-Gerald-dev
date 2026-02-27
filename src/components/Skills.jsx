@@ -7,21 +7,21 @@ const Skills = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const skills = [
-    { name: 'React', level: 90 },
+    { name: 'Laravel', level: 95 },
+    { name: 'PHP', level: 92 },
+    { name: 'Blade', level: 95 },
+    { name: 'React', level: 88 },
     { name: 'JavaScript', level: 88 },
-    { name: 'TypeScript', level: 80 },
-    { name: 'HTML/CSS', level: 95 },
-    { name: 'Node.js', level: 75 },
-    { name: 'Git', level: 85 },
+    { name: 'MySQL', level: 90 },
   ];
 
   const tools = [
-    { name: 'VS Code', icon: '💻' },
-    { name: 'Figma', icon: '🎨' },
-    { name: 'GitHub', icon: '📦' },
-    { name: 'Terminal', icon: '⌨️' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'Vercel', icon: '▲' },
+    { name: 'VS Code'},
+    { name: 'Figma' },
+    { name: 'GitHub'},
+    { name: 'Terminal'},
+    { name: 'Docker'},
+    { name: 'Railway'},
   ];
 
   const containerVariants = {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logodev from '../assets/logodev.svg';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -35,7 +36,7 @@ const Navbar = () => {
           className="logo"
           whileHover={{ opacity: 0.7 }}
         >
-          Gerald
+          <img src={logodev} alt="GCC Logo" />
         </motion.a>
 
         <div className="nav-links desktop">
@@ -82,7 +83,8 @@ const Navbar = () => {
                 transition={{ delay: index * 0.05 }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {item.name}
+                <span className="mobile-link-number">0{index + 1}</span>
+                <span className="mobile-link-text">{item.name}</span>
               </motion.a>
             ))}
           </motion.div>

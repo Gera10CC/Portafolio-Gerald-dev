@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import './Hero.css';
 
 const Hero = () => {
-  const roles = ['Desarrollador Frontend', 'Diseñador UI/UX', 'Creador Digital'];
+  const roles = ['Desarrollador Laravel', 'Desarrollador Full Stack', 'Backend & Frontend'];
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -36,7 +36,6 @@ const Hero = () => {
           animate="visible"
           variants={fadeUp}
         >
-          Hola, soy
         </motion.p>
 
         <motion.h1
@@ -46,7 +45,7 @@ const Hero = () => {
           animate="visible"
           variants={fadeUp}
         >
-          <span className="first-name">Gerald</span>
+          <span className="first-name">Gerald Calderón</span>
           <span className="last-name">Developer</span>
         </motion.h1>
 
@@ -112,7 +111,7 @@ const Hero = () => {
           variants={fadeUp}
         >
           <motion.a
-            href="https://github.com"
+            href="https://github.com/Gera10CC"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ opacity: 0.6 }}
@@ -122,7 +121,7 @@ const Hero = () => {
             </svg>
           </motion.a>
           <motion.a
-            href="https://linkedin.com"
+            href="www.linkedin.com/in/gerald-calderón-castillo-037142367"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ opacity: 0.6 }}
@@ -132,7 +131,7 @@ const Hero = () => {
             </svg>
           </motion.a>
           <motion.a
-            href="mailto:gerald@example.com"
+            href="mailto:geralcalderoncastillo@gmail.com"
             whileHover={{ opacity: 0.6 }}
           >
             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
@@ -141,21 +140,6 @@ const Hero = () => {
           </motion.a>
         </motion.div>
       </div>
-
-      <motion.div
-        className="scroll-indicator"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <span>Scroll</span>
-          <div className="scroll-arrow">↓</div>
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

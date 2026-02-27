@@ -47,8 +47,8 @@
   background: linear-gradient(
     to right,
     #fff 20%,
-    #a5b4fc 40%,
-    #818cf8 60%,
+    #00cea1 40%,
+    #5bb3d6 60%,
     #fff 80%
   );
   background-size: 200% auto;
@@ -123,14 +123,37 @@
 }
 
 .btn-primary {
-  background: var(--text-color);
-  color: var(--bg-color);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
   border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background: #d1d1d6;
-  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
