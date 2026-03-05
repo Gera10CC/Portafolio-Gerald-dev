@@ -28,8 +28,6 @@ const Contact = () => {
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      console.log('Enviando email con:', { serviceId, templateId, publicKey }); // Debug
-
       const templateParams = {
         from_name: formState.name,
         from_email: formState.email,
@@ -43,8 +41,6 @@ const Contact = () => {
         templateParams,
         publicKey
       );
-      
-      console.log('Email enviado exitosamente:', response); // Debug
       
       setIsSubmitting(false);
       setSubmitSuccess(true);
