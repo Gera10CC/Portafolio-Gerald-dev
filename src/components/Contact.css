@@ -178,6 +178,13 @@
   font-size: 0.95rem;
 }
 
+.error-message {
+  text-align: center;
+  color: #ff453a;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;

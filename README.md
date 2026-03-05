@@ -1,16 +1,66 @@
-# React + Vite
+# Portafolio Gerald - Desarrollador Full Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portafolio personal desarrollado con React, Vite y Framer Motion.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✨ Animaciones fluidas con Framer Motion
+- 📱 Diseño responsive
+- 📧 Formulario de contacto con EmailJS
+- 🎨 Interfaz moderna y minimalista
+- ⚡ Optimizado con Vite
 
-## React Compiler
+## 🛠️ Tecnologías
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- Framer Motion
+- EmailJS
+- Lucide Icons
 
-## Expanding the ESLint configuration
+## 📦 Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Instalar dependencias
+npm install
+
+# Configurar variables de entorno
+cp .env.example .env.local
+# Edita .env.local con tus credenciales de EmailJS
+```
+
+## ⚙️ Configuración de EmailJS
+
+Para que el formulario de contacto funcione, necesitas configurar EmailJS:
+
+1. Lee la guía completa en [EMAILJS_SETUP.md](./EMAILJS_SETUP.md)
+2. Crea una cuenta en [EmailJS](https://www.emailjs.com/)
+3. Configura tus variables de entorno en `.env.local`
+4. Para Netlify, agrega las variables en Site Settings → Environment Variables
+
+## 🏃‍♂️ Desarrollo
+
+```bash
+# Servidor de desarrollo
+npm run dev
+
+# Build para producción
+npm run build
+
+# Preview del build
+npm run preview
+```
+
+## 🌐 Deploy en Netlify
+
+1. Conecta tu repositorio a Netlify
+2. Configura las variables de entorno en Site Settings
+3. Deploy automático en cada push a main
+
+## 📄 Licencia
+
+MIT
+
+---
+
+Desarrollado con ❤️ por Gerald Calderón Castillo
