@@ -23,6 +23,14 @@ const Projects = () => {
     videoUrl: 'https://www.youtube.com/embed/ZAJFbNTf_RY',
     tags: ['ReactNative', 'API REST', 'Mobile App', 'Full Stack'],
   },
+  {
+    id: 3,
+    title: 'Glam Aura - Plataforma E-commerce Completa',
+    description:
+      'Sistema profesional de comercio electrónico con Laravel 11. Incluye panel administrativo completo, gestión de productos e inventario, múltiples métodos de pago y envío, notificaciones automáticas y dashboard con métricas en tiempo real. Aplicable a cualquier tipo de negocio.',
+    videoUrl: 'https://www.youtube.com/embed/_4CxQkOq4bk',
+    tags: ['Laravel 11', 'PHP', 'MySQL', 'E-commerce'],
+  },
   ];
 
   const containerVariants = {

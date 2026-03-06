@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, MessageCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
@@ -105,6 +105,16 @@ const Contact = () => {
               >
                 <Mail className="contact-icon" size={20} />
                 <span>geraldcalderoncastillo@gmail.com</span>
+              </motion.a>
+              <motion.a
+                href="https://wa.me/50664616422"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-method"
+                whileHover={{ x: 5 }}
+              >
+                <MessageCircle className="contact-icon" size={20} />
+                <span>WhatsApp: +506 6461-6422</span>
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/in/gerald-calderón-castillo-037142367"
