@@ -23,6 +23,25 @@ const Navbar = () => {
     { name: 'Contacto', href: '#contact' },
   ];
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    console.log('Click detectado en:', href);
+    
+    // Cierra el menú móvil
+    setIsMobileMenuOpen(false);
+    
+    // Navega con un pequeño delay para que el menú se cierre primero
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      console.log('Elemento encontrado:', element);
+      
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 300);
+  };
+
   return (
     <motion.nav
       className={`navbar ${isScrolled ? 'scrolled' : ''}`}
@@ -35,6 +54,7 @@ const Navbar = () => {
           href="#hero"
           className="logo"
           whileHover={{ opacity: 0.7 }}
+          onClick={(e) => handleNavClick(e, '#hero')}
         >
           <img src={logodev} alt="GCC Logo" />
         </motion.a>
@@ -49,6 +69,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
               whileHover={{ color: '#f5f5f7' }}
+              onClick={(e) => handleNavClick(e, item.href)}
             >
               {item.name}
             </motion.a>
@@ -81,7 +102,7 @@ const Navbar = () => {
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: index * 0.05 }}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 <span className="mobile-link-number">0{index + 1}</span>
                 <span className="mobile-link-text">{item.name}</span>

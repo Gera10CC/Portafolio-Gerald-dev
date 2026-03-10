@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geraldcalderon.site/sitemap.xml

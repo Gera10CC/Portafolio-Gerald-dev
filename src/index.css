@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -37,6 +38,10 @@ body {
 main {
   position: relative;
   z-index: 2;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
 
 /* Elegant Scrollbar */

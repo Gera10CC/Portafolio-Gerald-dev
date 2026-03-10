@@ -1,0 +1,16 @@
+{
+  "name": "Gerald Calderón - Desarrollador Web",
+  "short_name": "Gerald Dev",
+  "description": "Portafolio profesional de Gerald Calderón - Desarrollador Full Stack",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/src/assets/logodev.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
