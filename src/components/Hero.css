@@ -9,7 +9,7 @@
   position: relative;
   overflow: hidden;
   padding: 6rem 2rem 4rem;
-  background-image: url('/imagen.avif');
+  background-image: url('/imagen.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
