@@ -81,20 +81,20 @@ const Contact = () => {
         animate={isInView ? "visible" : "hidden"}
       >
         <motion.div className="section-header centered" variants={itemVariants}>
-          <span className="section-number">04</span>
+          <span className="section-number">06</span>
           <h2 className="section-title">Contacto</h2>
         </motion.div>
 
         <motion.p className="contact-subtitle" variants={itemVariants}>
-          ¿Tienes un proyecto en mente? Hablemos.
+          ¿Tiene un proyecto en mente? Trabajemos juntos.
         </motion.p>
 
         <div className="contact-content">
           <motion.div className="contact-info" variants={itemVariants}>
-            <h3>Conectemos</h3>
+            <h3>Hablemos</h3>
             <p>
-              Estoy disponible para proyectos freelance, oportunidades 
-              laborales o simplemente charlar sobre tecnología.
+              Estoy disponible para proyectos de desarrollo, consultoría técnica 
+              o colaboraciones profesionales. Respondo todos los mensajes en 24 horas.
             </p>
 
             <div className="contact-methods">

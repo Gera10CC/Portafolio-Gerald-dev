@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import './Footer.css';
+import logodev from '../assets/logodev.svg';
 
 const Footer = () => {
   return (
@@ -7,9 +8,10 @@ const Footer = () => {
       <div className="footer-content">
         <motion.div
           className="footer-logo"
-          whileHover={{ opacity: 0.7 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
         >
-          Gerald
+          <img src={logodev} alt="Gerald Calderón - Logo" className="footer-logo-img" />
         </motion.div>
         
         <div className="footer-social">
@@ -17,7 +19,7 @@ const Footer = () => {
             href="https://github.com/Gera10CC"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: '#f5f5f7' }}
+            whileHover={{ color: '#00ffd5' }}
           >
             GitHub
           </motion.a>
@@ -25,13 +27,13 @@ const Footer = () => {
             href="https://www.linkedin.com/in/gerald-calderón-castillo-037142367"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: '#f5f5f7' }}
+            whileHover={{ color: '#00ffd5' }}
           >
             LinkedIn
           </motion.a>
           <motion.a
             href="mailto:geraldcalderoncastillo@gmail.com"
-            whileHover={{ color: '#f5f5f7' }}
+            whileHover={{ color: '#00ffd5' }}
           >
             Email
           </motion.a>

@@ -42,27 +42,26 @@ const About = () => {
 
         <div className="about-content">
           <motion.div className="about-text" variants={itemVariants}>
-            <p>
-              Soy Ingeniero en Sistemas de Información y desarrollador web, enfocado en crear soluciones digitales sólidas, escalables y orientadas a resultados. Me apasiona construir sistemas que combinen una experiencia de usuario clara con una arquitectura técnica bien estructurada.
+            {/* TEXTO MEJORADO - MÁS DIRECTO Y PROFESIONAL */}
+            <p className="highlight-text">
+Ingeniero en Sistemas. Construyo aplicaciones web robustas y mantenibles.
+
             </p>
+            
             <p>
-              Me especializo en desarrollo backend con Laravel y Blade, creando aplicaciones web robustas y escalables. También trabajo en desarrollo frontend con React, diseño de interfaces, bases de datos, arquitectura de aplicaciones y despliegue. Disfruto entender el sistema completo, desde la interacción del usuario hasta la lógica y la infraestructura que lo sostiene.
-            </p>
-            <p>
-              Más allá del código, me interesa la eficiencia, la automatización y la sostenibilidad de los proyectos. Siempre busco optimizar procesos, evaluar herramientas con criterio técnico y construir productos que aporten valor real a largo plazo.
-            </p>
+Arquitectura, bases de datos, automatización y rendimiento. Todo pensado para que el sistema crezca contigo.            </p>
 
             <motion.div className="tech-list" variants={itemVariants}>
-              <p>Tecnologías principales:</p>
+              <p>Tecnologías que domino:</p>
               <ul>
-                {['Laravel', 'Blade', 'PHP', 'React', 'JavaScript (ES6+)', 'MySQL'].map((tech, index) => (
+                {['Laravel', 'React', 'PHP', 'JavaScript (ES6+)', 'MySQL', 'Blade'].map((tech, index) => (
                   <motion.li
                     key={tech}
                     initial={{ opacity: 0, x: -10 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: 0.5 + index * 0.08 }}
                   >
-                    <span className="tech-arrow">→</span> {tech}
+                    <span className="tech-arrow">▹</span> {tech}
                   </motion.li>
                 ))}
               </ul>
@@ -71,17 +70,17 @@ const About = () => {
 
           <motion.div className="about-image" variants={itemVariants}>
             <div className="image-wrapper">
-              <img src={profileImage} alt="Gerald - Desarrollador Web" className="profile-image" />
+              <img src={profileImage} alt="Gerald - Ingeniero en Sistemas" className="profile-image" />
             </div>
           </motion.div>
         </div>
 
         <motion.div className="stats-container" variants={containerVariants}>
           {[
-            { number: '2+', label: 'Años de Experiencia' },
-            { number: '10+', label: 'Proyectos Completados' },
-            { number: '10+', label: 'Tecnologías' },
-            { number: '100%', label: 'Compromiso' },
+            { number: '2+', label: 'años de experiencia' },
+            { number: '10+', label: 'proyectos completados' },
+            { number: '6', label: 'tecnologías core' },
+            { number: '100%', label: 'enfoque en calidad' },
           ].map((stat) => (
             <motion.div
               key={stat.label}

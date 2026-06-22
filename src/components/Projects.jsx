@@ -64,14 +64,9 @@ const Projects = () => {
           <div className="section-line"></div>
         </motion.div>
 
-        <motion.div className="projects-grid" variants={containerVariants}>
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className="project-card"
-              variants={itemVariants}
-              whileHover={{ y: -8 }}
-            >
+        <motion.div className="projects-grid" variants={itemVariants}>
+          {projects.map((project) => (
+            <div key={project.id} className="project-card">
               <div className="project-image">
                 <iframe
                   className="project-video"
@@ -82,7 +77,6 @@ const Projects = () => {
                   allowFullScreen
                 ></iframe>
               </div>
-
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
@@ -92,7 +86,7 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </motion.div>
       </motion.div>

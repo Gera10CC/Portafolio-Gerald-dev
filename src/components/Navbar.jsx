@@ -1,117 +1,124 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logodev from '../assets/logodev.svg';
 import './Navbar.css';
+import logodev from '../assets/logodev.svg'; // Ajusta la ruta según tu estructura
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 50);
+      
+      // Detectar sección activa
+      const sections = ['about', 'skills', 'projects', 'reviews', 'faq', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Inicio', href: '#hero' },
-    { name: 'Sobre Mí', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Proyectos', href: '#projects' },
-    { name: 'Contacto', href: '#contact' },
+    { id: 'about', label: 'Sobre Mí', number: '01' },
+    { id: 'skills', label: 'Habilidades', number: '02' },
+    { id: 'projects', label: 'Proyectos', number: '03' },
+    { id: 'reviews', label: 'Reviews', number: '04' },
+    { id: 'faq', label: 'FAQ', number: '05' },
+    { id: 'contact', label: 'Contacto', number: '06' },
   ];
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    console.log('Click detectado en:', href);
-    
-    // Cierra el menú móvil
-    setIsMobileMenuOpen(false);
-    
-    // Navega con un pequeño delay para que el menú se cierre primero
-    setTimeout(() => {
-      const element = document.querySelector(href);
-      console.log('Elemento encontrado:', element);
-      
-      if (element) {
-        const y = element.getBoundingClientRect().top + window.pageYOffset - 70;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    }, 300);
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+    }
   };
 
   return (
-    <motion.nav
-      className={`navbar ${isScrolled ? 'scrolled' : ''}`}
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-    >
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <motion.a
-          href="#hero"
-          className="logo"
-          whileHover={{ opacity: 0.7 }}
-          onClick={(e) => handleNavClick(e, '#hero')}
+        {/* LOGO */}
+        <motion.div 
+          className="logo" 
+          onClick={() => scrollToSection('about')}
+          whileHover={{ scale: 0.96 }}
+          whileTap={{ scale: 0.92 }}
         >
-          <img src={logodev} alt="GCC Logo" />
-        </motion.a>
+          <img src={logodev} alt="Gerald Calderón - Logo" />
+        </motion.div>
 
+        {/* DESKTOP NAV */}
         <div className="nav-links desktop">
-          {navItems.map((item, index) => (
-            <motion.a
-              key={item.name}
-              href={item.href}
-              className="nav-link"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
-              whileHover={{ color: '#f5f5f7' }}
-              onClick={(e) => handleNavClick(e, item.href)}
+          {navItems.map((item) => (
+            <motion.div
+              key={item.id}
+              className={`glass-button ${activeSection === item.id ? 'active' : ''}`}
+              onClick={() => scrollToSection(item.id)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.96 }}
             >
-              {item.name}
-            </motion.a>
+              <span className="nav-link">{item.label}</span>
+            </motion.div>
           ))}
         </div>
 
-        <motion.button
-          className="mobile-menu-btn"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          whileTap={{ scale: 0.95 }}
+        {/* MOBILE MENU BUTTON */}
+        <button 
+          className="mobile-menu-btn" 
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
         >
-          <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}></span>
-        </motion.button>
+          <div className={`hamburger ${isOpen ? 'open' : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
       </div>
 
+      {/* MOBILE MENU */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
+        {isOpen && (
+          <motion.div 
             className="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="mobile-nav-link"
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: index * 0.05 }}
-                onClick={(e) => handleNavClick(e, item.href)}
-              >
-                <span className="mobile-link-number">0{index + 1}</span>
-                <span className="mobile-link-text">{item.name}</span>
-              </motion.a>
-            ))}
+            <div className="mobile-menu-inner">
+              {navItems.map((item) => (
+                <motion.div
+                  key={item.id}
+                  className="mobile-nav-link"
+                  onClick={() => scrollToSection(item.id)}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className="mobile-link-number">{item.number}</span>
+                  <span className="mobile-link-text">{item.label}</span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 };
 
