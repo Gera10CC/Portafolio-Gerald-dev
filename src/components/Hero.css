@@ -9,10 +9,6 @@
   position: relative;
   overflow: hidden;
   padding: 6rem 2rem 4rem;
-  background-image: url('/compress.webp');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 /* ========== SIN OVERLAY ========== */

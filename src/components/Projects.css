@@ -8,10 +8,6 @@
   justify-content: center;
   position: relative;
   padding: 100px 2rem;
-  background-image: url('/compress.webp');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   overflow: hidden;
 }
 

@@ -4,10 +4,6 @@
 .footer {
   padding: 3rem 2rem 4rem;
   position: relative;
-  background-image: url('/compress.webp');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   border-top: 0.5px solid rgba(255, 255, 255, 0.06);
 }
 
